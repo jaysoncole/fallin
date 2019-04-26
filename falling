@@ -1,0 +1,30 @@
+from pylab import *
+
+
+vt=54
+g=9.8
+K=2.24
+m=68
+
+y=0
+t=0
+dt=0.01
+
+yp=[]
+tp=[]
+
+v=0
+
+while t<13.8:
+    F=-m*g+K*v**2
+    v=v+F*dt/m
+    y=y+v*dt
+    t=t+dt
+    yp=yp+[y]
+    tp=tp+[t]
+
+plot(tp, yp, linewidth=3)
+grid(True)
+xlabel('Time [s]')
+ylabel('Vertical Position [m]')
+show()
